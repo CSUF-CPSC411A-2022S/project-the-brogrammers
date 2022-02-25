@@ -9,11 +9,3 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 }
-
-class GameLogic {
-
-}
-
-class BoardCreation {
-
-}
