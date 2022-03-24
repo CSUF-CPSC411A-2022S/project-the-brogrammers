@@ -6,7 +6,7 @@
     app:startDestination="@id/profile">
     <fragment
         android:id="@+id/profile"
-        android:name="com.example.shwordle.Profile"
+        android:name="com.example.shwordle.ProfileFragment"
         android:label="profile"
         tools:layout="@layout/profile" />
 </navigation>

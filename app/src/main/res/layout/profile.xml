@@ -5,17 +5,17 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="28dp"
         android:text="@string/hello_blank_fragment"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,8 +24,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
-        android:text="Stats:"
+        android:layout_marginTop="24dp"
+        android:text="@string/stats"
+        android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -34,8 +35,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stats" />
 
@@ -43,40 +45,22 @@
         android:id="@+id/gamesWon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="36dp"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/gamesPlayed"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/stats" />
 
     <TextView
         android:id="@+id/gamesLost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
         android:text="TextView"
+        android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/gamesWon"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
-
-    <TextView
-        android:id="@+id/difficultWords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="52dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gamesPlayed" />
-
-    <TextView
-        android:id="@+id/favoriteTopics"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="52dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/difficultWords"
-        app:layout_constraintTop_toBottomOf="@+id/gamesWon" />
+        app:layout_constraintTop_toBottomOf="@+id/stats" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
