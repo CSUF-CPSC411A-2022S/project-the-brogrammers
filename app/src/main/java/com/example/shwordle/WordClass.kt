@@ -1,12 +1,14 @@
 package com.example.shwordle
 
-open class Word(val spelling: String, length: Int) {
-    /*
-    * Need to implement check for making
-    * */
+class KeyWord(var spelling: String, var length: Int,
+              var correctCharList: List<Char>) {
+    init{
+        length = spelling.length
+        correctCharList = spelling.map { it.lowercaseChar() }
+    }
+
+    fun checkSpelling(comparison: KeyWord){
+        // TODO: insert a check between both objects.
+    }
 }
 
-class KeyWord(spelling: String, length: Int,
-              correctletter: Array<Char>):
-    Word(spelling, length) {
-}
