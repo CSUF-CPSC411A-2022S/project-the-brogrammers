@@ -9,6 +9,39 @@
 
 
     <TextView
+        android:id="@+id/favoriteTopic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="67dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gamesPlayed" />
+
+    <TextView
+        android:id="@+id/difficultWords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="72dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gamesPlayed" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/topicRV"
+        android:layout_width="126dp"
+        android:layout_height="320dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/wordsRV"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favoriteTopic" />
+
+    <TextView
         android:id="@+id/name"
         android:layout_width="333dp"
         android:layout_height="53dp"
@@ -62,5 +95,13 @@
         android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/gamesWon"
         app:layout_constraintTop_toBottomOf="@+id/stats" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wordsRV"
+        android:layout_width="135dp"
+        android:layout_height="322dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="294dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,19 +5,34 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.databinding.DataBindingUtil
 import com.example.shwordle.databinding.ProfileBinding
 
 
 class ProfileFragment : Fragment() {
+    private val viewModel: Profile by viewModels()
+    private lateinit var binding: ProfileBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val binding = ProfileBinding.inflate(layoutInflater)
-        binding.name.text = "Hello ${Profile.name}"
-        binding.gamesPlayed.text = "Played: ${Profile.gamesPlayed}"
-        binding.gamesWon.text = "Won: ${Profile.gamesWon}"
-        binding.gamesLost.text = "Lost: ${Profile.gamesLost}"
+    ): View {
+        binding = DataBindingUtil.inflate(inflater, R.layout.profile, container, false)
         return binding.root
     }
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        val tracker: Profile by viewModels()
+//        val binding = ProfileBinding.inflate(layoutInflater)
+//        binding.name.text = "Hello"
+//        binding.gamesPlayed.text = "Played: ${Profile.gamesPlayed}"
+//        binding.gamesWon.text = "Won: ${Profile.gamesWon}"
+//        binding.gamesLost.text = "Lost: ${Profile.gamesLost}"
+//
+//        var topicsListAdapter = WordListAdapter(Profile.difficult)
+//        return binding.root
+//    }
 }

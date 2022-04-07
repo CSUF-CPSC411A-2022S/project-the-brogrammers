@@ -1,15 +1,33 @@
 package com.example.shwordle
 
-class Profile {
-    companion object {
-        var name = "Player"
-        var gamesPlayed = 0
-        var gamesWon = 0
-        var gamesLost = 0
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
-        //Have the top 10 difficult words
-        var difficultWords = mutableListOf<String>()
-        var favoriteTopics = mutableListOf<String>()
+class Profile(): ViewModel()  {
+    private val _gamesPlayed = MutableLiveData(0)
+    private val _gamesWon = MutableLiveData(0)
+    private val _gamesLost = MutableLiveData(0)
+
+    private val difficultWords = mutableListOf<String>()
+    private val favoriteTopics = mutableListOf<String>()
+
+    val gamesPlayed: LiveData<Int>
+        get() {
+            return _gamesPlayed
+        }
+    val gamesWon: LiveData<Int>
+        get() {
+            return _gamesWon
+        }
+    val gamesLost: LiveData<Int>
+        get() {
+            return _gamesLost
+        }
+
+    init {
+        _gamesPlayed.value = 0
+        _gamesWon.value = 0
+        _gamesLost.value = 0
     }
-
 }
