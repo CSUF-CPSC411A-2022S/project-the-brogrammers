@@ -4,15 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.databinding.DataBindingUtil
+import com.example.shwordle.database.Profile
 import com.example.shwordle.databinding.ProfileBinding
 
 
 class ProfileFragment : Fragment() {
     private val viewModel: Profile by viewModels()
-    private lateinit var binding: ProfileBinding
+     private lateinit var binding: ProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

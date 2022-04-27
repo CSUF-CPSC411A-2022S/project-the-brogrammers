@@ -1,4 +1,4 @@
-package com.example.shwordle
+package com.example.shwordle.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -18,12 +18,6 @@ data class Profile(
 
     @ColumnInfo()
     var gamesLost: Int = 0,
-
-//    @ColumnInfo()
-//    var difficultWords: Int = 0,
-//
-//    @ColumnInfo()
-//    var FavoriteWords: Int = 0,
 )
 
 //

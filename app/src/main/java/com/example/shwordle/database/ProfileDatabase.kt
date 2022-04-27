@@ -1,4 +1,4 @@
-package com.example.shwordle
+package com.example.shwordle.database
 
 import android.content.Context
 import androidx.room.Database

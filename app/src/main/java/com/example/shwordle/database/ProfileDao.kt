@@ -1,6 +1,5 @@
-package com.example.shwordle
+package com.example.shwordle.database
 
-import android.provider.ContactsContract
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
@@ -17,7 +16,4 @@ interface ProfileDao {
 
     @Query("SELECT * from profile_table WHERE profileId = :key")
     fun get(key: Long): LiveData<Profile>?
-
-    @Query("SELECT * from profile_table ORDER BY profileID DESC")
-    fun getAllProfiles(): LiveData<List<Profile>>
 }
