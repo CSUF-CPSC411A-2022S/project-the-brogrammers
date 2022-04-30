@@ -3,10 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/profile">
+    app:startDestination="@id/gameboardFragment">
     <fragment
-        android:id="@+id/profile"
-        android:name="com.example.shwordle.Profile"
+        android:id="@+id/profileFragment"
+        android:name="com.example.shwordle.ProfileFragment"
         android:label="profile"
         tools:layout="@layout/profile" />
+    <fragment
+        android:id="@+id/gameboardFragment"
+        android:name="com.example.shwordle.GameboardFragment"
+        android:label="GameboardFragment" >
+        <action
+            android:id="@+id/action_gameboardFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>
