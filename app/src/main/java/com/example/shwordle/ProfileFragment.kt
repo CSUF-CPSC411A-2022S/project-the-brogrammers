@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.lifecycle.ViewModelProvider
 import com.example.shwordle.database.ProfileDatabase
 
@@ -29,7 +28,7 @@ class ProfileFragment : Fragment() {
             ViewModelProvider(
                 this, viewModelFactory).get(ProfileViewModel::class.java)
 
-        binding.profileViewModel = profileViewModel
+        //binding.profileViewModel = profileViewModel
 
         binding.lifecycleOwner = this
 
