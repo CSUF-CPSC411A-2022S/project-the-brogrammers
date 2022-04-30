@@ -16,4 +16,7 @@ interface ProfileDao {
 
     @Query("SELECT * from profile_table WHERE profileId = :key")
     fun get(key: Long): LiveData<Profile>?
+
+    @Query("SELECT * from profile_table ORDER BY profileId DESC")
+    fun getAllProfiles(): LiveData<List<Profile>>
 }

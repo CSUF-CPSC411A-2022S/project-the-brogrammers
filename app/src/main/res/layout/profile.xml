@@ -2,113 +2,93 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <data>
-
+        <variable
+            name="profileViewModel"
+            type="com.example.shwordle.ProfileViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ProfileFragment">
-
-
-        <TextView
-            android:id="@+id/favoriteTopic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="67dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/gamesPlayed" />
+        tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/difficultWords"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="72dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gamesPlayed" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/topicRV"
-            android:layout_width="126dp"
-            android:layout_height="320dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/wordsRV"
-            app:layout_constraintHorizontal_bias="0.126"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/favoriteTopic" />
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="333dp"
-            android:layout_height="53dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="28dp"
-            android:text="@string/hello_blank_fragment"
-            android:textSize="40sp"
+            android:id="@+id/Hello"
+            android:layout_width="312dp"
+            android:layout_height="85dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="64dp"
+            android:text="Hello!\nHere are your stats"
+            android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/stats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/stats"
+            android:id="@+id/GamesPlayed"
+            android:layout_width="233dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="44dp"
+            android:text="Games Played:"
             android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintTop_toBottomOf="@+id/Hello" />
 
         <TextView
-            android:id="@+id/gamesPlayed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:id="@+id/GamesPlayedNum"
+            android:layout_width="74dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="44dp"
+            android:text="@{profileViewModel.gamesPlayed}"
+            android:textSize="32sp"
+            app:layout_constraintStart_toEndOf="@+id/GamesPlayed"
+            app:layout_constraintTop_toBottomOf="@+id/Hello" />
+
+        <TextView
+            android:id="@+id/GamesWon"
+            android:layout_width="228dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="36dp"
-            android:text="TextView"
-            android:textSize="20sp"
+            android:text="Games Won:"
+            android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/stats" />
+            app:layout_constraintTop_toBottomOf="@+id/GamesPlayed" />
 
         <TextView
-            android:id="@+id/gamesWon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="36dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/gamesPlayed"
-            app:layout_constraintTop_toBottomOf="@+id/stats" />
+            android:id="@+id/GamesWonNum"
+            android:layout_width="77dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text="@{profileViewModel.gamesWon}"
+            android:textSize="32sp"
+            app:layout_constraintStart_toEndOf="@+id/GamesWon"
+            app:layout_constraintTop_toBottomOf="@+id/GamesPlayedNum" />
 
         <TextView
-            android:id="@+id/gamesLost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="36dp"
-            android:text="TextView"
-            android:textSize="20dp"
-            app:layout_constraintStart_toEndOf="@+id/gamesWon"
-            app:layout_constraintTop_toBottomOf="@+id/stats" />
+            android:id="@+id/GamesLost"
+            android:layout_width="228dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="132dp"
+            android:text="Games Lost:"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GamesPlayed" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/wordsRV"
-            android:layout_width="135dp"
-            android:layout_height="322dp"
-            android:layout_marginEnd="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="294dp" />
+        <TextView
+            android:id="@+id/GamesLostNum"
+            android:layout_width="77dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="44dp"
+            android:text="@{profileViewModel.gamesLost}"
+            android:textSize="32sp"
+            app:layout_constraintStart_toEndOf="@+id/GamesLost"
+            app:layout_constraintTop_toBottomOf="@+id/GamesWonNum" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
