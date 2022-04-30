@@ -1,20 +1,71 @@
 package com.example.shwordle
 
-class GameMechanics {
-    // TODO: Mechanics, alike a while loop that iterates the game so long as the word has not been unfound nor won
-    /*
-    psuedocode:
-      while(game){
-        -read in a dictionary text file into a list
-        -make a random function that selects a word at
-            random and then keeps it as the word that we would have to guess
-        -get the word from the user, check it against a dictionary word to make sure the word is valid
-            if the word is valid check it against the word that we have stored
-                if none of the letters are in the word gray out the letters that the user used so far
-                if letters do exist in the word assign appropriate color to the letter
-        gridSetup();
-        checkInput();
-        checkAnswer();
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+class GameActivity : AppCompatActivity() {
+    private var word: TextView? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_game)
+        word = findViewById(R.id.resultText)
+
+        val name = generateShwordle(names)
+        val attemptViews = listOf<EditText>(
+            findViewById(R.id.guessText1),
+            findViewById(R.id.guessText2),
+            findViewById(R.id.guessText3),
+            findViewById(R.id.guessText4),
+            findViewById(R.id.guessText5),
+            findViewById(R.id.guessText6),
+        )
+
+        val editTextPositionMap = attemptViews.mapIndexed { index, editText ->  Pair(editText, index) }.toMap()
+
+        val guessButton = findViewById<Button>(R.id.guessButton)
+        guessButton.setOnClickListener {
+            enterGuess(name, attemptViews, editTextPositionMap[currentFocus]!!)
         }
-     */
+
+        findViewById<EditText>(R.id.guessText1).requestFocus()
+    }
+
+    private fun enterGuess(name: String, attemptViews: List<EditText>, attempt: Int) {
+        val guessWord = attemptViews[attempt].text.toString()
+
+        println("GUESSWORD -> $guessWord")
+        println("NAME -> $name")
+
+        if (!validateGuess(guessWord)) {
+            word!!.text = String.format("Word not int the list")
+            return
+        }
+
+        val letterResults = guessWord
+            .mapIndexed { index, letter -> checkLetter(letter, index, name) }
+            .map {
+                when (it) {
+                    CORRECT -> 'G'
+                    PART_CORRECT -> 'A'
+                    INCORRECT -> 'R'
+                }
+            }
+            .joinToString(" | ")
+
+        word!!.text = String.format(letterResults)
+
+        if (attempt < attemptViews.indices.last) {
+            attemptViews[attempt + 1].requestFocus()
+        } else {
+            if (letterResults == "G | G | G | G | G") {
+                word!!.text = String.format("Well done!")
+            } else {
+                word!!.text = String.format("Bad luck!")
+            }
+        }
+    }
 }
