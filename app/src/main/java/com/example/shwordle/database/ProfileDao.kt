@@ -13,7 +13,7 @@ interface ProfileDao {
     suspend fun update(profile: Profile)
 
     @Query("SELECT * from profile_table WHERE id = :key")
-    fun get(key: Long): LiveData<Profile>?
+    fun get(key: Long): LiveData<Profile>
 
     @Query("SELECT * from profile_table ORDER BY id DESC")
     fun getAllProfiles(): LiveData<List<Profile>>

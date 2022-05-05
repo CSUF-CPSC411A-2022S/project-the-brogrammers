@@ -12,7 +12,11 @@ class ProfileViewModel(
         var gamesPlayed = MutableLiveData<Int>(0)
         var gamesWon = MutableLiveData<Int>(0)
         var gamesLost = MutableLiveData<Int>(0)
-        val profile = database.get(1)
+        var profile = database.get(1)
+
+    init{
+        profile = database.get(1)
+    }
 
     fun insert(){
         viewModelScope.launch {
