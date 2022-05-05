@@ -25,6 +25,7 @@ class ProfileFragment : Fragment() {
             ViewModelProvider(
                 this, viewModelFactory
             ).get(ProfileViewModel::class.java)
+        profileViewModel.getProfile()
         binding.profileViewModel = profileViewModel
         binding.lifecycleOwner = this
         binding.GamesPlayedNum.setText((profileViewModel.profile.value?.gamesPlayed.toString()))

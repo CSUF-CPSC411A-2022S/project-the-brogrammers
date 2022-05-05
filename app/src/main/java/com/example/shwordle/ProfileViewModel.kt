@@ -14,15 +14,14 @@ class ProfileViewModel(
         var gamesLost = MutableLiveData<Int>(0)
         var profile = database.get(1)
 
-    init{
-        profile = database.get(1)
-    }
-
     fun insert(){
         viewModelScope.launch {
             var profile = Profile()
             profile.id = 1
             database.insert(profile)
         }
+    }
+    fun getProfile(){
+        profile = database.get(1)
     }
 }
