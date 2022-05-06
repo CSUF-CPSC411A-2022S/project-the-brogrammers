@@ -132,7 +132,6 @@ class GameboardFragment : Fragment() {
             GameMechanic()
         }
 
-        binding.clear.setOnClickListener {  }
         return binding.root
     }
 
