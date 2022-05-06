@@ -15,6 +15,30 @@
         android:background="#E89CF4"
         tools:context=".MainActivity">
 
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.594" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.668" />
+
         <EditText
             android:id="@+id/RFiveLetterThree"
             android:layout_width="74dp"
@@ -279,40 +303,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.423" />
 
-
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="#000000"
-            android:ems="10"
-            android:hint="Correct Word"
-            android:inputType="textPostalAddress"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.648" />
-
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:ems="10"
-            android:hint="Attempt Word"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.587" />
 
         <Button
             android:id="@+id/clear"
