@@ -99,7 +99,7 @@ class GameboardFragment : Fragment() {
                     val toast =
                         Toast.makeText(application, "words are equal", Toast.LENGTH_SHORT)
                     toast.show()
-                    binding.announcer.setText("Correct")
+                    binding.announcer.setText("Correct!!")
                     // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
                 }else{
                     ++i
