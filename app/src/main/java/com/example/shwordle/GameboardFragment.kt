@@ -45,23 +45,12 @@ class GameboardFragment : Fragment() {
             profileViewModel.insert()
         }
 
-        //CheckifCorrect()
         val wordList = listOf("cat")
         val word = wordList.random()
         val addButton: Button = binding.add
         var i = 0
         //val result = 1;
-        /*
-        fun CheckifCorrect() {
-            if (result == 0) {
-                val toast =
-                    Toast.makeText(this, "words are equal", Toast.LENGTH_SHORT)
-                toast.show()
-                announcer.setText("Correct")
-                // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
-            }
-        }
-        */
+
 
         fun GameMechanic () {
             val letterOne: String = binding.letterOne.text.toString().lowercase()
@@ -103,7 +92,7 @@ class GameboardFragment : Fragment() {
             Toast.makeText(application, wordGuessed, Toast.LENGTH_SHORT).show()
             binding.address.setText(word)
             var result = wordGuessed.compareTo(word)
-            //CheckifCorrect(result)
+            CheckifCorrect(result)
 
             if(i != 5) {
                 if (result == 0) {
@@ -145,5 +134,18 @@ class GameboardFragment : Fragment() {
 
         binding.clear.setOnClickListener {  }
         return binding.root
+    }
+
+}
+fun CheckifCorrect(result : Int) {
+    if (result == 0) {
+        /*
+        val toast =
+            Toast.makeText(this, "words are equal", Toast.LENGTH_SHORT)
+        toast.show()
+        //binding.announcer.setText("Failed")
+        // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
+        *
+         */
     }
 }

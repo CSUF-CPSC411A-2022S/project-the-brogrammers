@@ -25,7 +25,7 @@
             android:maxLength="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/letterTwo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.495" />
@@ -56,7 +56,7 @@
             android:maxLength="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.833"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/letterTwo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.351" />
@@ -138,24 +138,10 @@
             app:layout_constraintVertical_bias="0.197" />
 
         <EditText
-            android:id="@+id/announcer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.109" />
-
-        <EditText
             android:id="@+id/RTwoLetterTwo"
             android:layout_width="74dp"
             android:layout_height="49dp"
-            android:layout_marginEnd="164dp"
+            android:layout_marginEnd="168dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:maxLength="1"
@@ -200,7 +186,7 @@
             android:maxLength="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/letterTwo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.423" />
@@ -215,10 +201,10 @@
             android:maxLength="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/letterTwo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.197" />
+            app:layout_constraintVertical_bias="0.196" />
 
         <EditText
             android:id="@+id/RTwoLetterOne"
@@ -263,7 +249,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.197" />
+            app:layout_constraintVertical_bias="0.196" />
 
         <EditText
             android:id="@+id/RTwoLetterThree"
@@ -275,7 +261,7 @@
             android:maxLength="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.833"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/letterTwo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.28" />
@@ -380,6 +366,18 @@
             android:text="Button"
             app:layout_constraintStart_toEndOf="@+id/profileButton"
             app:layout_constraintTop_toBottomOf="@+id/LettersRight" />
+
+        <TextView
+            android:id="@+id/announcer"
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.123" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
