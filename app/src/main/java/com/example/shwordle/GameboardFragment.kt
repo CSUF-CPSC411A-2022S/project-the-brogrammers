@@ -93,10 +93,10 @@ class GameboardFragment : Fragment() {
             var result = wordGuessed.compareTo(word)
             CheckifCorrect(result)
             //var wordsRight = ""
-
             if(i != 5) {
                 if (result == 0) {
                     binding.announcer.setText("Correct")
+                    profileViewModel.updateGamesWon()
                     // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
                 }else{
                     ++i
@@ -167,6 +167,7 @@ class GameboardFragment : Fragment() {
                 // TODO uses a contains method to check if letters are correct; doesn't work
 
             }else if(i == 5){
+                profileViewModel.updateGamesLost()
                 binding.announcer.setText("Game Over")
             }
 
