@@ -1,27 +1,54 @@
 package com.example.shwordle
 
 import android.app.Application
-import androidx.lifecycle.*
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.viewModelScope
 import com.example.shwordle.database.Profile
 import com.example.shwordle.database.ProfileDao
 import kotlinx.coroutines.launch
 
 class ProfileViewModel(
     val database: ProfileDao,
-    application: Application) : AndroidViewModel(application) {
-        var gamesPlayed = MutableLiveData<Int>(0)
-        var gamesWon = MutableLiveData<Int>(0)
-        var gamesLost = MutableLiveData<Int>(0)
-        var profile = database.get(1)
+    application: Application):
+    AndroidViewModel(application) {
+    var profile = database.get(0)
+
 
     fun insert(){
         viewModelScope.launch {
-            var profile = Profile()
-            profile.id = 1
-            database.insert(profile)
+            var newProfile = Profile()
+            newProfile.id = 0
+            newProfile.gamesPlayed = 0
+            database.insert(newProfile)
         }
     }
-    fun getProfile(){
-        profile = database.get(1)
+
+    fun updateGamesPlayed(){
+        viewModelScope.launch {
+            var tempProfile = database.get2(0)
+            tempProfile.gamesPlayed = tempProfile.gamesPlayed + 1
+            database.update(tempProfile)
+        }
+    }
+
+    fun updateGamesWon(){
+        viewModelScope.launch {
+            var tempProfile = database.get2(0)
+            tempProfile.gamesWon = tempProfile.gamesWon + 1
+            database.update(tempProfile)
+        }
+    }
+
+    fun updateGamesLost(){
+        viewModelScope.launch {
+            var tempProfile = database.get2(0)
+            tempProfile.gamesLost = tempProfile.gamesLost + 1
+            database.update(tempProfile)
+        }
+    }
+
+    fun gets(){
+        profile = database.get(0)
     }
 }
