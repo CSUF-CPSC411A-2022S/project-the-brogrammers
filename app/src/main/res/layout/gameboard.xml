@@ -467,6 +467,8 @@
             android:inputType="textPersonName"
             android:maxLength="1"
             android:textColor="#FFFFFF"
+            android:textColorHighlight="#00FFFFFF"
+            android:textColorLink="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="@+id/SR1C1"
             app:layout_constraintEnd_toEndOf="@+id/SR1C1"
             app:layout_constraintHorizontal_bias="1.0"

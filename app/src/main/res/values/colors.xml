@@ -9,5 +9,6 @@
     <color name="white">#FFFFFF</color>
     <color name="richblack">#010203</color>
     <color name="slategrey">#1a1b1c</color>
+    <color name="noclor">#001A1B1C</color>
 
 </resources>

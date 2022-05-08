@@ -129,7 +129,7 @@ class GameboardFragment : Fragment() {
                     Toast.makeText(application, "Out of tries", Toast.LENGTH_SHORT)
                 toast.show()
                  */
-                binding.announcer.setText("Failed")
+                binding.announcer.setText("Out of Tries")
             }
 
         }
