@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -39,6 +40,11 @@ class GameboardFragment : Fragment() {
 
         binding.profileViewModel = profileViewModel
         binding.lifecycleOwner = this
+        binding.gameOver.isVisible = false
+        binding.gameWon.isVisible = false
+        binding.devControl1.isVisible = false
+        binding.devControl2.isVisible = false
+        binding.devControl3.isVisible = false
 
         binding.profileButton.setOnClickListener { view: View ->
             profileViewModel.updateGamesPlayed()
@@ -46,62 +52,113 @@ class GameboardFragment : Fragment() {
         }
 
         val wordList = listOf("cat","bat", "fat", "mad", "run")
-        val word = wordList.random()
+        var word = wordList.random()
         val addButton: Button = binding.add
         var i = 0
-        //val result = 1;
 
 
         fun GameMechanic () {
-            val letterOne: String = binding.letterOne.text.toString().lowercase()
-            val letterTwo: String = binding.letterTwo.text.toString().lowercase()
-            val letterThree: String = binding.letterThree.text.toString().lowercase()
+            var letterOne: String = binding.letterOne.text.toString().lowercase()
+            var letterTwo: String = binding.letterTwo.text.toString().lowercase()
+            var letterThree: String = binding.letterThree.text.toString().lowercase()
 
-            val RTwoLetterOne: String = binding.RTwoLetterOne.text.toString().lowercase()
-            val RTwoLetterTwo: String = binding.RTwoLetterTwo.text.toString().lowercase()
-            val RTwoLetterThree: String = binding.RTwoLetterThree.text.toString().lowercase()
+            var RTwoLetterOne: String = binding.RTwoLetterOne.text.toString().lowercase()
+            var RTwoLetterTwo: String = binding.RTwoLetterTwo.text.toString().lowercase()
+            var RTwoLetterThree: String = binding.RTwoLetterThree.text.toString().lowercase()
 
-            val RThreeLetterOne: String = binding.RThreeLetterOne.text.toString().lowercase()
-            val RThreeLetterTwo: String = binding.RThreeLetterTwo.text.toString().lowercase()
-            val RThreeLetterThree: String = binding.RThreeLetterThree.text.toString().lowercase()
+            var RThreeLetterOne: String = binding.RThreeLetterOne.text.toString().lowercase()
+            var RThreeLetterTwo: String = binding.RThreeLetterTwo.text.toString().lowercase()
+            var RThreeLetterThree: String = binding.RThreeLetterThree.text.toString().lowercase()
 
-            val RFourLetterOne: String = binding.RFourLetterOne.text.toString().lowercase()
-            val RFourLetterTwo: String = binding.RFourLetterTwo.text.toString().lowercase()
-            val RFourLetterThree: String = binding.RFourLetterThree.text.toString().lowercase()
+            var RFourLetterOne: String = binding.RFourLetterOne.text.toString().lowercase()
+            var RFourLetterTwo: String = binding.RFourLetterTwo.text.toString().lowercase()
+            var RFourLetterThree: String = binding.RFourLetterThree.text.toString().lowercase()
 
-            val RFiveLetterOne: String = binding.RFiveLetterOne.text.toString().lowercase()
-            val RFiveLetterTwo: String = binding.RFiveLetterTwo.text.toString().lowercase()
-            val RFiveLetterThree: String = binding.RFiveLetterThree.text.toString().lowercase()
+            var RFiveLetterOne: String = binding.RFiveLetterOne.text.toString().lowercase()
+            var RFiveLetterTwo: String = binding.RFiveLetterTwo.text.toString().lowercase()
+            var RFiveLetterThree: String = binding.RFiveLetterThree.text.toString().lowercase()
+
 
             var wordGuessed = letterOne + letterTwo + letterThree
+            if(wordGuessed.length != 3){
+                binding.letterOne.setText("S")
+                letterOne = "S"
+                binding.letterTwo.setText("S")
+                letterTwo = "S"
+                binding.letterThree.setText("S")
+                letterThree = "S"
+                wordGuessed = letterOne + letterTwo + letterThree
+            }
+
             if(i == 1){
                 wordGuessed = RTwoLetterOne + RTwoLetterTwo + RTwoLetterThree
+                if(wordGuessed.length != 3){
+                    binding.RTwoLetterOne.setText("S")
+                    RTwoLetterOne = "S"
+                    binding.RTwoLetterTwo.setText("S")
+                    RTwoLetterTwo = "S"
+                    binding.RTwoLetterThree.setText("S")
+                    RTwoLetterThree = "S"
+                    wordGuessed = RTwoLetterOne + RTwoLetterTwo + RTwoLetterThree
+                }
             }
             if(i == 2){
                 wordGuessed = RThreeLetterOne + RThreeLetterTwo + RThreeLetterThree
+                if(wordGuessed.length != 3){
+                    binding.RThreeLetterOne.setText("S")
+                    RThreeLetterOne = "S"
+                    binding.RThreeLetterTwo.setText("S")
+                    RThreeLetterTwo = "S"
+                    binding.RThreeLetterThree.setText("S")
+                    RThreeLetterThree = "S"
+                    wordGuessed = RThreeLetterOne + RThreeLetterTwo + RThreeLetterThree
+                }
             }
             if(i == 3){
                 wordGuessed = RFourLetterOne + RFourLetterTwo + RFourLetterThree
+                if(wordGuessed.length != 3){
+                    binding.RFourLetterOne.setText("S")
+                    RFourLetterOne = "S"
+                    binding.RFourLetterTwo.setText("S")
+                    RFourLetterTwo = "S"
+                    binding.RFourLetterThree.setText("S")
+                    RFourLetterThree = "S"
+                    wordGuessed = RFourLetterOne + RFourLetterTwo + RFourLetterThree
+                }
             }
             if(i == 4){
                 wordGuessed = RFiveLetterOne + RFiveLetterTwo + RFiveLetterThree
+                if(wordGuessed.length != 3){
+                    binding.RFiveLetterOne.setText("S")
+                    RFiveLetterOne = "S"
+                    binding.RFiveLetterTwo.setText("S")
+                    RFiveLetterTwo = "S"
+                    binding.RFiveLetterThree.setText("S")
+                    RFiveLetterThree = "S"
+                    wordGuessed = RFiveLetterOne + RFiveLetterTwo + RFiveLetterThree
+                }
             }
             // TODO make above initialization its own func ^^^
 
-            binding.name.setText(wordGuessed)
-            binding.address.setText(word)
+            binding.devControl1.setText(wordGuessed)
+            binding.devControl2.setText(word)
             var result = wordGuessed.compareTo(word)
             CheckifCorrect(result)
-            //var wordsRight = ""
-            if(i != 5) {
+            if(i != 6) {
                 if (result == 0) {
-                    binding.announcer.setText("Correct")
+                    binding.announcer.setText("Game Won")
                     profileViewModel.updateGamesWon()
+                    binding.gameWon.isVisible = true
                     // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
                 }else{
                     ++i
 
                     binding.announcer.setText("not quite ")
+                    if(i == 5){
+                        profileViewModel.updateGamesLost()
+                        binding.announcer.setText("Game Over")
+                        binding.gameOver.isVisible = true
+                    }
                     val wordArray = Array(wordGuessed.length) {wordGuessed[it].toString() }
                     val word = Array(word.length) {word[it].toString() }
                     var t = word.size
@@ -110,7 +167,7 @@ class GameboardFragment : Fragment() {
                     while(p != 3) {
                         if(word[p] == wordArray[p]){
                             wordsRight += wordArray[p]
-                            binding.LettersRight.setText(wordsRight)
+                            binding.devControl3.setText(wordsRight)
 
                             // Is there a better way to do this? Of course there is, did I find it before time was due? No, no I did not.
                             // Checks for location-based correctness and turns green per iteration of i (which is round checked)
@@ -158,6 +215,17 @@ class GameboardFragment : Fragment() {
                                     binding.RFourLetterThree.setTextColor(Color.parseColor("#008000"))
                                 }
                             }
+                            if(i == 5){
+                                if(word[0] == wordArray[0]) {
+                                    binding.RFiveLetterOne.setTextColor(Color.parseColor("#008000"))
+                                }
+                                if(word[1] == wordArray[1]) {
+                                    binding.RFiveLetterTwo.setTextColor(Color.parseColor("#008000"))
+                                }
+                                if(word[2] == wordArray[2]) {
+                                    binding.RFiveLetterThree.setTextColor(Color.parseColor("#008000"))
+                                }
+                            }
 
                         }
                         ++p
@@ -166,15 +234,69 @@ class GameboardFragment : Fragment() {
                 }
                 // TODO uses a contains method to check if letters are correct; doesn't work
 
-            }else if(i == 5){
+            }/*else if(i == 5){
                 profileViewModel.updateGamesLost()
                 binding.announcer.setText("Game Over")
-            }
+            }*/
 
         }
 
+
         addButton.setOnClickListener {
             GameMechanic()
+            if(i == 6){
+                binding.announcer.setText("Welcome")
+                word = wordList.random()
+                binding.gameOver.isVisible = false
+                binding.gameWon.isVisible = false
+                binding.letterOne.setText("")
+                binding.letterTwo.setText("")
+                binding.letterThree.setText("")
+
+                binding.RTwoLetterOne.setText("")
+                binding.RTwoLetterTwo.setText("")
+                binding.RTwoLetterThree.setText("")
+
+                binding.RThreeLetterOne.setText("")
+                binding.RThreeLetterTwo.setText("")
+                binding.RThreeLetterThree.setText("")
+
+                binding.RFourLetterOne.setText("")
+                binding.RFourLetterTwo.setText("")
+                binding.RFourLetterThree.setText("")
+
+                binding.RFiveLetterOne.setText("")
+                binding.RFiveLetterTwo.setText("")
+                binding.RFiveLetterThree.setText("")
+                i = 0
+            }
+        }
+
+        binding.resetButton.setOnClickListener {
+            binding.announcer.setText("Welcome")
+            word = wordList.random()
+            binding.gameOver.isVisible = false
+            binding.gameWon.isVisible = false
+            binding.letterOne.setText("")
+            binding.letterTwo.setText("")
+            binding.letterThree.setText("")
+
+            binding.RTwoLetterOne.setText("")
+            binding.RTwoLetterTwo.setText("")
+            binding.RTwoLetterThree.setText("")
+
+            binding.RThreeLetterOne.setText("")
+            binding.RThreeLetterTwo.setText("")
+            binding.RThreeLetterThree.setText("")
+
+            binding.RFourLetterOne.setText("")
+            binding.RFourLetterTwo.setText("")
+            binding.RFourLetterThree.setText("")
+
+            binding.RFiveLetterOne.setText("")
+            binding.RFiveLetterTwo.setText("")
+            binding.RFiveLetterThree.setText("")
+            i = 0
         }
 
         return binding.root
@@ -186,3 +308,4 @@ fun CheckifCorrect(result : Int) {
         // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
     }
 }
+

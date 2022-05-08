@@ -16,7 +16,7 @@
 
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/devControl1"
             android:layout_width="175dp"
             android:layout_height="50dp"
             android:textAlignment="center"
@@ -30,7 +30,7 @@
             app:layout_constraintVertical_bias="0.649" />
 
         <TextView
-            android:id="@+id/address"
+            android:id="@+id/devControl2"
             android:layout_width="175dp"
             android:layout_height="50dp"
             android:textAlignment="center"
@@ -47,15 +47,16 @@
             android:id="@+id/announcer"
             android:layout_width="175dp"
             android:layout_height="50dp"
+            android:text="Welcome"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.457"
+            app:layout_constraintHorizontal_bias="0.474"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.024" />
+            app:layout_constraintVertical_bias="0.023" />
 
         <Button
             android:id="@+id/add"
@@ -67,7 +68,7 @@
             app:layout_constraintHorizontal_bias="0.44"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.841" />
+            app:layout_constraintVertical_bias="0.83" />
 
         <Button
             android:id="@+id/profileButton"
@@ -81,18 +82,30 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.901" />
 
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="82dp"
+            android:layout_height="43dp"
+            android:text="Reset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.458"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.965" />
+
         <TextView
-            android:id="@+id/LettersRight"
+            android:id="@+id/devControl3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Letters Right:"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.451"
+            app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.952" />
+            app:layout_constraintVertical_bias="0.761" />
 
         <ImageView
             android:id="@+id/SR1C2"
@@ -501,6 +514,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/SR2C1"
             app:layout_constraintVertical_bias="0.266" />
+
+        <ImageView
+            android:id="@+id/gameOver"
+            android:layout_width="281dp"
+            android:layout_height="216dp"
+            android:tint="#E91E63"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_delete" />
+
+        <ImageView
+            android:id="@+id/gameWon"
+            android:layout_width="277dp"
+            android:layout_height="219dp"
+            android:tint="#FFC107"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/btn_star" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
