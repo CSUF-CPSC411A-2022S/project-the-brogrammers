@@ -103,7 +103,16 @@ class GameboardFragment : Fragment() {
                     binding.announcer.setText("not quite ")
                     val wordArray = Array(wordGuessed.length) {wordGuessed[it].toString() }
                     val word = Array(word.length) {word[it].toString() }
-                    val t = word.size
+                    var t = word.size
+                    var wordsRight = ""
+                    var p = 0
+                    while(p < t) {
+                        if(word[p] == wordArray[p]){
+                            wordsRight + wordArray[p]
+                            binding.LettersRight.setText(wordArray[p])
+                        }
+                        ++p
+                    }
                     // TODO for length of array, compare arrays to check for dupes
                 }
                 // TODO uses a contains method to check if letters are correct; doesn't work
@@ -124,13 +133,6 @@ class GameboardFragment : Fragment() {
 }
 fun CheckifCorrect(result : Int) {
     if (result == 0) {
-        /*
-        val toast =
-            Toast.makeText(this, "words are equal", Toast.LENGTH_SHORT)
-        toast.show()
-        //binding.announcer.setText("Failed")
         // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
-        *
-         */
     }
 }
