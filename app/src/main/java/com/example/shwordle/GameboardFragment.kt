@@ -108,8 +108,8 @@ class GameboardFragment : Fragment() {
                     var p = 0
                     while(p < t) {
                         if(word[p] == wordArray[p]){
-                            wordsRight + wordArray[p]
-                            binding.LettersRight.setText(wordArray[p])
+                            wordsRight += wordArray[p]
+                            binding.LettersRight.setText(wordsRight)
                         }
                         ++p
                     }
