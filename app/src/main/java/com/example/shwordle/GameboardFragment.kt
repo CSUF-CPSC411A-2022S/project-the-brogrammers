@@ -1,5 +1,6 @@
 package com.example.shwordle
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -92,6 +93,7 @@ class GameboardFragment : Fragment() {
             binding.address.setText(word)
             var result = wordGuessed.compareTo(word)
             CheckifCorrect(result)
+            var wordsRight = ""
 
             if(i != 5) {
                 if (result == 0) {
@@ -104,12 +106,32 @@ class GameboardFragment : Fragment() {
                     val wordArray = Array(wordGuessed.length) {wordGuessed[it].toString() }
                     val word = Array(word.length) {word[it].toString() }
                     var t = word.size
-                    var wordsRight = ""
+                    //var wordsRight = ""
                     var p = 0
                     while(p < t) {
+                        if(p == 1) {
+                            binding.letterOne.setTextColor(Color.parseColor("#008000"))
+                        }
+                        if(p == 2) {
+                            binding.letterTwo.setTextColor(Color.parseColor("#008000"))
+                        }
+                        if(p == 3) {
+                            binding.letterThree.setTextColor(Color.parseColor("#008000"))
+                        }
                         if(word[p] == wordArray[p]){
                             wordsRight += wordArray[p]
                             binding.LettersRight.setText(wordsRight)
+                            /*
+                            if(p == 1) {
+                                binding.letterOne.setTextColor(Color.parseColor("#008000"))
+                            }
+                            if(p == 2) {
+                                binding.letterTwo.setTextColor(Color.parseColor("#008000"))
+                            }
+                            if(p == 3) {
+                                binding.letterThree.setTextColor(Color.parseColor("#008000"))
+                            }*/
+
                         }
                         ++p
                     }
