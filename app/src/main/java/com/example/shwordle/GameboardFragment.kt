@@ -1,20 +1,18 @@
 package com.example.shwordle
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+
 import com.example.shwordle.database.ProfileDatabase
 import com.example.shwordle.databinding.GameboardBinding
-import com.example.shwordle.databinding.ProfileBinding
 
 
 class GameboardFragment : Fragment() {
@@ -33,19 +31,20 @@ class GameboardFragment : Fragment() {
         val viewModelFactory = ProfileViewModelFactory(dataSource, application)
 
         val profileViewModel =
-            ViewModelProvider(this, viewModelFactory).get(ProfileViewModel::class.java)
+            ViewModelProvider(
+                this, viewModelFactory).get(ProfileViewModel::class.java)
+
+        profileViewModel.insert()
 
         binding.profileViewModel = profileViewModel
+        binding.lifecycleOwner = this
 
         binding.profileButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_gameboardFragment_to_profileFragment)
+            profileViewModel.updateGamesPlayed()
+            view.findNavController().navigate(R.id.action_gameboardFragment_to_profile_fragment)
         }
 
-        binding.create.setOnClickListener {
-            profileViewModel.insert()
-        }
-
-        val wordList = listOf("cat")
+        val wordList = listOf("cat","bat", "fat", "mad", "run")
         val word = wordList.random()
         val addButton: Button = binding.add
         var i = 0
@@ -100,6 +99,7 @@ class GameboardFragment : Fragment() {
                         Toast.makeText(application, "words are equal", Toast.LENGTH_SHORT)
                     toast.show()
                     binding.announcer.setText("Correct!!")
+                    profileViewModel.updateGamesWon()
                     // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
                 }else{
                     ++i
@@ -124,6 +124,7 @@ class GameboardFragment : Fragment() {
                     Toast.makeText(application, "Out of tries", Toast.LENGTH_SHORT)
                 toast.show()
                 binding.announcer.setText("Failed")
+
             }
 
         }
