@@ -53,8 +53,8 @@ class GameboardFragment : Fragment() {
 
         fun GameMechanic () {
             val letterOne: String = binding.letterOne.text.toString().lowercase()
-            val letterTwo: String = binding.letterTwo2.text.toString().lowercase()
-            val letterThree: String = binding.letterThree2.text.toString().lowercase()
+            val letterTwo: String = binding.letterTwo.text.toString().lowercase()
+            val letterThree: String = binding.letterThree.text.toString().lowercase()
 
             val RTwoLetterOne: String = binding.RTwoLetterOne.text.toString().lowercase()
             val RTwoLetterTwo: String = binding.RTwoLetterTwo.text.toString().lowercase()
@@ -88,7 +88,7 @@ class GameboardFragment : Fragment() {
             // TODO make above initialization its own func ^^^
 
             binding.name.setText(wordGuessed)
-            Toast.makeText(application, wordGuessed, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(application, wordGuessed, Toast.LENGTH_SHORT).show()
             binding.address.setText(word)
             var result = wordGuessed.compareTo(word)
             CheckifCorrect(result)
@@ -124,7 +124,7 @@ class GameboardFragment : Fragment() {
                     Toast.makeText(application, "Out of tries", Toast.LENGTH_SHORT)
                 toast.show()
                 binding.announcer.setText("Failed")
-
+                profileViewModel.updateGamesLost()
             }
 
         }

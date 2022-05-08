@@ -32,7 +32,7 @@ class profile_fragment : Fragment() {
         profileViewModel.profile.observe(viewLifecycleOwner, Observer {
             profile -> binding.GamesPlayedNum.setText(profile?.gamesPlayed.toString())
             binding.GamesWonNum.setText(profile?.gamesWon.toString())
-            binding.GamesLostNum.setText(profile?.gamesWon.toString())
+            binding.GamesLostNum.setText(profile?.gamesLost.toString())
         })
 
         binding.profileViewModel = profileViewModel

@@ -5,20 +5,19 @@
     android:id="@+id/navigation"
     app:startDestination="@id/gameboardFragment">
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.shwordle.ProfileFragment"
-        android:label="profile"
-        tools:layout="@layout/profile" >
-        <action
-            android:id="@+id/action_profileFragment_to_gameboardFragment"
-            app:destination="@id/gameboardFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/gameboardFragment"
         android:name="com.example.shwordle.GameboardFragment"
         android:label="GameboardFragment" >
         <action
-            android:id="@+id/action_gameboardFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            android:id="@+id/action_gameboardFragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.example.shwordle.profile_fragment"
+        android:label="profile_fragment" >
+        <action
+            android:id="@+id/action_profile_fragment_to_gameboardFragment"
+            app:destination="@id/gameboardFragment" />
     </fragment>
 </navigation>
