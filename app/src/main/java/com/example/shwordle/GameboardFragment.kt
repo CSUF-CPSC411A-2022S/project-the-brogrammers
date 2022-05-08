@@ -1,5 +1,6 @@
 package com.example.shwordle
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -88,43 +89,85 @@ class GameboardFragment : Fragment() {
             // TODO make above initialization its own func ^^^
 
             binding.name.setText(wordGuessed)
-            //Toast.makeText(application, wordGuessed, Toast.LENGTH_SHORT).show()
             binding.address.setText(word)
             var result = wordGuessed.compareTo(word)
             CheckifCorrect(result)
+            //var wordsRight = ""
 
             if(i != 5) {
                 if (result == 0) {
-                    val toast =
-                        Toast.makeText(application, "words are equal", Toast.LENGTH_SHORT)
-                    toast.show()
-                    binding.announcer.setText("Correct!!")
-                    profileViewModel.updateGamesWon()
+                    binding.announcer.setText("Correct")
                     // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
                 }else{
                     ++i
-                    val toast =
-                        Toast.makeText(application, "words are not equal", Toast.LENGTH_SHORT)
-                    toast.show()
+
                     binding.announcer.setText("not quite ")
                     val wordArray = Array(wordGuessed.length) {wordGuessed[it].toString() }
                     val word = Array(word.length) {word[it].toString() }
-                    val t = word.size
+                    var t = word.size
+                    var wordsRight = ""
+                    var p = 0
+                    while(p != 3) {
+                        if(word[p] == wordArray[p]){
+                            wordsRight += wordArray[p]
+                            binding.LettersRight.setText(wordsRight)
+
+                            // Is there a better way to do this? Of course there is, did I find it before time was due? No, no I did not.
+                            // Checks for location-based correctness and turns green per iteration of i (which is round checked)
+                            if(i == 1){
+                                if(word[0] == wordArray[0]) {
+                                    binding.letterOne.setTextColor(Color.parseColor("#008000"))
+                                }
+                                if(word[1] == wordArray[1]) {
+                                    binding.letterTwo.setTextColor(Color.parseColor("#008000"))
+                                }
+                                if(word[2] == wordArray[2]) {
+                                    binding.letterThree.setTextColor(Color.parseColor("#008000"))
+                                }
+                            }
+                            if(i == 2){
+                                if(word[0] == wordArray[0]) {
+                                    binding.RTwoLetterOne.setTextColor(Color.parseColor("#008000"))
+                                }
+                                if(word[1] == wordArray[1]) {
+                                    binding.RTwoLetterTwo.setTextColor(Color.parseColor("#008000"))
+                                }
+                                if(word[2] == wordArray[2]) {
+                                    binding.RTwoLetterThree.setTextColor(Color.parseColor("#008000"))
+                                }
+                            }
+                            if(i == 3){
+                                if(word[0] == wordArray[0]) {
+                                    binding.RThreeLetterOne.setTextColor(Color.parseColor("#008000"))
+                                }
+                                if(word[1] == wordArray[1]) {
+                                    binding.RThreeLetterTwo.setTextColor(Color.parseColor("#008000"))
+                                }
+                                if(word[2] == wordArray[2]) {
+                                    binding.RThreeLetterThree.setTextColor(Color.parseColor("#008000"))
+                                }
+                            }
+                            if(i == 4){
+                                if(word[0] == wordArray[0]) {
+                                    binding.RFourLetterOne.setTextColor(Color.parseColor("#008000"))
+                                }
+                                if(word[1] == wordArray[1]) {
+                                    binding.RFourLetterTwo.setTextColor(Color.parseColor("#008000"))
+                                }
+                                if(word[2] == wordArray[2]) {
+                                    binding.RFourLetterThree.setTextColor(Color.parseColor("#008000"))
+                                }
+                            }
+
+                        }
+                        ++p
+                    }
                     // TODO for length of array, compare arrays to check for dupes
                 }
-                /*
-                if(wordGuessed.contains(word, true)){
-                    val wordArray = Array(wordGuessed.length) {wordGuessed[it].toString() }
-                    lettersRight.setText(word)
-                 */
                 // TODO uses a contains method to check if letters are correct; doesn't work
 
             }else if(i == 5){
-                val toast =
-                    Toast.makeText(application, "Out of tries", Toast.LENGTH_SHORT)
-                toast.show()
-                binding.announcer.setText("Failed")
-                profileViewModel.updateGamesLost()
+                binding.announcer.setText("Game Over")
             }
 
         }
@@ -139,13 +182,6 @@ class GameboardFragment : Fragment() {
 }
 fun CheckifCorrect(result : Int) {
     if (result == 0) {
-        /*
-        val toast =
-            Toast.makeText(this, "words are equal", Toast.LENGTH_SHORT)
-        toast.show()
-        //binding.announcer.setText("Failed")
         // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
-        *
-         */
     }
 }
