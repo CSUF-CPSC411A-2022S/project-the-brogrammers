@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.shwordle.ProfileFragment"
-        android:label="profile"
+        android:label=""
         tools:layout="@layout/profile" >
         <action
             android:id="@+id/action_profileFragment_to_gameboardFragment"
@@ -16,7 +16,7 @@
     <fragment
         android:id="@+id/gameboardFragment"
         android:name="com.example.shwordle.GameboardFragment"
-        android:label="GameboardFragment" >
+        android:label="" >
         <action
             android:id="@+id/action_gameboardFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
