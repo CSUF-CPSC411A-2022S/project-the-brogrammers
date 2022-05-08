@@ -35,7 +35,7 @@ class GameboardFragment : Fragment() {
         val profileViewModel =
             ViewModelProvider(this, viewModelFactory).get(ProfileViewModel::class.java)
 
-        binding.profileViewModel = profileViewModel
+        // binding.profileViewModel = profileViewModel
 
         binding.profileButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_gameboardFragment_to_profileFragment)
@@ -54,8 +54,8 @@ class GameboardFragment : Fragment() {
 
         fun GameMechanic () {
             val letterOne: String = binding.letterOne.text.toString().lowercase()
-            val letterTwo: String = binding.letterTwo2.text.toString().lowercase()
-            val letterThree: String = binding.letterThree2.text.toString().lowercase()
+            val letterTwo: String = binding.letterTwo.text.toString().lowercase()
+            val letterThree: String = binding.letterThree.text.toString().lowercase()
 
             val RTwoLetterOne: String = binding.RTwoLetterOne.text.toString().lowercase()
             val RTwoLetterTwo: String = binding.RTwoLetterTwo.text.toString().lowercase()
@@ -96,16 +96,20 @@ class GameboardFragment : Fragment() {
 
             if(i != 5) {
                 if (result == 0) {
+                    /*
                     val toast =
                         Toast.makeText(application, "words are equal", Toast.LENGTH_SHORT)
                     toast.show()
+                     */
                     binding.announcer.setText("Correct!!")
                     // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
                 }else{
                     ++i
+                    /*
                     val toast =
                         Toast.makeText(application, "words are not equal", Toast.LENGTH_SHORT)
                     toast.show()
+                     */
                     binding.announcer.setText("not quite ")
                     val wordArray = Array(wordGuessed.length) {wordGuessed[it].toString() }
                     val word = Array(word.length) {word[it].toString() }
@@ -120,9 +124,11 @@ class GameboardFragment : Fragment() {
                 // TODO uses a contains method to check if letters are correct; doesn't work
 
             }else if(i == 5){
+                /*
                 val toast =
                     Toast.makeText(application, "Out of tries", Toast.LENGTH_SHORT)
                 toast.show()
+                 */
                 binding.announcer.setText("Failed")
             }
 

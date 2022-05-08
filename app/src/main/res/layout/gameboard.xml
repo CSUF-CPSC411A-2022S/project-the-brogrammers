@@ -3,312 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="profileViewModel"
-            type="com.example.shwordle.ProfileViewModel" />
-    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E89CF4"
+        android:background="#010203"
         tools:context=".MainActivity">
 
         <TextView
             android:id="@+id/name"
             android:layout_width="175dp"
             android:layout_height="50dp"
-            android:textColor="#000000"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.477" />
+            app:layout_constraintVertical_bias="0.647" />
+
 
         <TextView
             android:id="@+id/address"
             android:layout_width="175dp"
             android:layout_height="50dp"
-            android:textColor="#000000"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.55" />
-
-
-        <EditText
-            android:id="@+id/RFourLetterTwo"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="164dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.324" />
-
-        <EditText
-            android:id="@+id/RFiveLetterThree"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="96dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toEndOf="@+id/letterTwo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.395" />
-
-        <EditText
-            android:id="@+id/letterOne2"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/letterTwo"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.096" />
-
-        <EditText
-            android:id="@+id/RThreeLetterThree"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="96dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toEndOf="@+id/letterTwo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.252" />
-
-        <EditText
-            android:id="@+id/letterTwo"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="160dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.096" />
-
-        <EditText
-            android:id="@+id/RFourLetterOne"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/letterTwo"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.324" />
-
-        <EditText
-            android:id="@+id/RFiveLetterOne"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/letterTwo"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.395" />
-
-        <EditText
-            android:id="@+id/RThreeLetterOne"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/letterTwo"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.252" />
-
-        <EditText
-            android:id="@+id/letterThree"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="96dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.727"
-            app:layout_constraintStart_toEndOf="@+id/letterTwo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.096" />
-
-        <EditText
-            android:id="@+id/RTwoLetterTwo"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="164dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.18" />
-
-        <EditText
-            android:id="@+id/RThreeLetterTwo"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="164dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.252" />
-
-        <EditText
-            android:id="@+id/RFiveLetterTwo"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="164dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.395" />
-
-        <EditText
-            android:id="@+id/RFourLetterThree"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="96dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toEndOf="@+id/letterTwo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.324" />
-
-        <EditText
-            android:id="@+id/letterThree2"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="96dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toEndOf="@+id/letterTwo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.096" />
-
-        <EditText
-            android:id="@+id/RTwoLetterOne"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/letterTwo"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.18" />
-
-        <EditText
-            android:id="@+id/letterTwo2"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="160dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.096" />
-
-        <EditText
-            android:id="@+id/letterOne"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/letterTwo"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.096" />
-
-        <EditText
-            android:id="@+id/RTwoLetterThree"
-            android:layout_width="74dp"
-            android:layout_height="49dp"
-            android:layout_marginEnd="96dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:maxLength="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toEndOf="@+id/letterTwo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.18" />
+            app:layout_constraintVertical_bias="0.72" />
 
         <TextView
             android:id="@+id/announcer"
             android:layout_width="175dp"
             android:layout_height="50dp"
-            android:textColor="#000000"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -323,10 +57,10 @@
             android:text="Check"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.675" />
+            app:layout_constraintVertical_bias="0.84" />
 
         <Button
             android:id="@+id/profileButton"
@@ -335,22 +69,10 @@
             android:text="Profile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.245"
+            app:layout_constraintHorizontal_bias="0.233"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.739" />
-
-        <Button
-            android:id="@+id/create"
-            android:layout_width="102dp"
-            android:layout_height="40dp"
-            android:text="Button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.734"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.74" />
+            app:layout_constraintVertical_bias="0.901" />
 
         <TextView
             android:id="@+id/LettersRight"
@@ -359,10 +81,428 @@
             android:text="Letters Right:"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.794" />
+            app:layout_constraintVertical_bias="0.95" />
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="102dp"
+            android:layout_height="40dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.721"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.903" />
+
+        <ImageView
+            android:id="@+id/SR1C2"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.137"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR2C1"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.278"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.233"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR1C1"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.278"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.137"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR3C2"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.329"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR4C2"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.425"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR5C2"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.521"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR2C2"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.233"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR2C3"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.233"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR3C3"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.329"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR4C3"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.425"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR4C4"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.521"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR3C1"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.278"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.329"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR5C1"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.278"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.521"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR4C1"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.278"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.425"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:id="@+id/SR1C3"
+            android:layout_width="77dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="-9dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.769"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.137"
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+        <EditText
+            android:id="@+id/RFourLetterOne"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR4C1"
+            app:layout_constraintEnd_toEndOf="@+id/SR4C1"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR4C1"
+            app:layout_constraintTop_toTopOf="@+id/SR4C1"
+            app:layout_constraintVertical_bias="0.066" />
+
+        <EditText
+            android:id="@+id/RFiveLetterThree"
+            android:layout_width="47dp"
+            android:layout_height="51dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR4C4"
+            app:layout_constraintEnd_toEndOf="@+id/SR4C4"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR4C4"
+            app:layout_constraintTop_toTopOf="@+id/SR4C4"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/RThreeLetterThree"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR3C3"
+            app:layout_constraintEnd_toEndOf="@+id/SR3C3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR3C3"
+            app:layout_constraintTop_toTopOf="@+id/SR3C3"
+            app:layout_constraintVertical_bias="0.066" />
+
+        <EditText
+            android:id="@+id/RFourLetterThree"
+            android:layout_width="47dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR4C3"
+            app:layout_constraintEnd_toEndOf="@+id/SR4C3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR4C3"
+            app:layout_constraintTop_toTopOf="@+id/SR4C3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/letterThree"
+            android:layout_width="48dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR1C3"
+            app:layout_constraintEnd_toEndOf="@+id/SR1C3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR1C3"
+            app:layout_constraintTop_toTopOf="@+id/SR1C3"
+            app:layout_constraintVertical_bias="0.071" />
+
+        <EditText
+            android:id="@+id/RTwoLetterThree"
+            android:layout_width="48dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR2C3"
+            app:layout_constraintEnd_toEndOf="@+id/SR2C3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR2C3"
+            app:layout_constraintTop_toTopOf="@+id/SR2C3"
+            app:layout_constraintVertical_bias="0.071" />
+
+        <EditText
+            android:id="@+id/RFourLetterTwo"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR4C2"
+            app:layout_constraintEnd_toEndOf="@+id/SR4C2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR4C2"
+            app:layout_constraintTop_toTopOf="@+id/SR4C2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/RFiveLetterTwo"
+            android:layout_width="48dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR5C2"
+            app:layout_constraintEnd_toEndOf="@+id/SR5C2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR5C2"
+            app:layout_constraintTop_toTopOf="@+id/SR5C2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/RThreeLetterTwo"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR3C2"
+            app:layout_constraintEnd_toEndOf="@+id/SR3C2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR3C2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.94" />
+
+        <EditText
+            android:id="@+id/RTwoLetterOne"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR2C1"
+            app:layout_constraintEnd_toEndOf="@+id/SR2C1"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/SR2C1"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <EditText
+            android:id="@+id/RTwoLetterTwo"
+            android:layout_width="47dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR2C2"
+            app:layout_constraintEnd_toEndOf="@+id/SR2C2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR2C2"
+            app:layout_constraintTop_toTopOf="@+id/SR2C2"
+            app:layout_constraintVertical_bias="0.071" />
+
+        <EditText
+            android:id="@+id/letterTwo"
+            android:layout_width="47dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR1C2"
+            app:layout_constraintEnd_toEndOf="@+id/SR1C2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR1C2"
+            app:layout_constraintTop_toTopOf="@+id/SR1C2"
+            app:layout_constraintVertical_bias="0.071" />
+
+        <EditText
+            android:id="@+id/letterOne"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR1C1"
+            app:layout_constraintEnd_toEndOf="@+id/SR1C1"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR1C1"
+            app:layout_constraintTop_toTopOf="@+id/SR1C1"
+            app:layout_constraintVertical_bias="0.066" />
+
+        <EditText
+            android:id="@+id/RFiveLetterOne"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR5C1"
+            app:layout_constraintEnd_toEndOf="@+id/SR5C1"
+            app:layout_constraintHorizontal_bias="0.964"
+            app:layout_constraintStart_toStartOf="@+id/SR5C1"
+            app:layout_constraintTop_toTopOf="@+id/SR5C1"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/RThreeLetterOne"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLength="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SR3C1"
+            app:layout_constraintEnd_toEndOf="@+id/SR3C1"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/SR3C1"
+            app:layout_constraintTop_toTopOf="@+id/SR3C1"
+            app:layout_constraintVertical_bias="0.066" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
