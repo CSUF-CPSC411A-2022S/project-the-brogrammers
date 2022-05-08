@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -18,7 +17,7 @@ import com.example.shwordle.databinding.ProfileBinding
 
 
 class GameboardFragment : Fragment() {
-    lateinit var clearButton: Button
+    // lateinit var clearButton: Button
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,6 +48,7 @@ class GameboardFragment : Fragment() {
         val word = wordList.random()
         val addButton: Button = binding.add
         var i = 0
+        binding.announcer.setText("Welcome")
         //val result = 1;
 
 
@@ -89,46 +89,26 @@ class GameboardFragment : Fragment() {
             // TODO make above initialization its own func ^^^
 
             binding.name.setText(wordGuessed)
-            Toast.makeText(application, wordGuessed, Toast.LENGTH_SHORT).show()
             binding.address.setText(word)
             var result = wordGuessed.compareTo(word)
             CheckifCorrect(result)
 
             if(i != 5) {
                 if (result == 0) {
-                    /*
-                    val toast =
-                        Toast.makeText(application, "words are equal", Toast.LENGTH_SHORT)
-                    toast.show()
-                     */
-                    binding.announcer.setText("Correct!!")
+                    binding.announcer.setText("Correct")
                     // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
                 }else{
                     ++i
-                    /*
-                    val toast =
-                        Toast.makeText(application, "words are not equal", Toast.LENGTH_SHORT)
-                    toast.show()
-                     */
+
                     binding.announcer.setText("not quite ")
                     val wordArray = Array(wordGuessed.length) {wordGuessed[it].toString() }
                     val word = Array(word.length) {word[it].toString() }
                     val t = word.size
                     // TODO for length of array, compare arrays to check for dupes
                 }
-                /*
-                if(wordGuessed.contains(word, true)){
-                    val wordArray = Array(wordGuessed.length) {wordGuessed[it].toString() }
-                    lettersRight.setText(word)
-                 */
                 // TODO uses a contains method to check if letters are correct; doesn't work
 
             }else if(i == 5){
-                /*
-                val toast =
-                    Toast.makeText(application, "Out of tries", Toast.LENGTH_SHORT)
-                toast.show()
-                 */
                 binding.announcer.setText("Game Over")
             }
 
