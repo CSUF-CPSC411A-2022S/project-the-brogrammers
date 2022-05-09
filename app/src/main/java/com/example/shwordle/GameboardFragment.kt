@@ -158,6 +158,7 @@ class GameboardFragment : Fragment() {
                         profileViewModel.updateGamesLost()
                         binding.announcer.setText("Game Over")
                         binding.gameOver.isVisible = true
+                        binding.devControl2.isVisible = true
                     }
                     val wordArray = Array(wordGuessed.length) {wordGuessed[it].toString() }
                     val word = Array(word.length) {word[it].toString() }
@@ -176,16 +177,22 @@ class GameboardFragment : Fragment() {
                                     binding.letterOne.setTextColor(Color.parseColor("#008000"))
                                 } else if(word.contains(wordArray[0])){
                                     binding.letterOne.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.letterOne.setTextColor(Color.parseColor("#708090"))
                                 }
                                 if(word[1] == wordArray[1]) {
                                     binding.letterTwo.setTextColor(Color.parseColor("#008000"))
                                 } else if(word.contains(wordArray[1])){
                                     binding.letterTwo.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.letterTwo.setTextColor(Color.parseColor("#708090"))
                                 }
                                 if(word[2] == wordArray[2]) {
                                     binding.letterThree.setTextColor(Color.parseColor("#008000"))
                                 } else if(word.contains(wordArray[2])){
                                     binding.letterThree.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.letterThree.setTextColor(Color.parseColor("#708090"))
                                 }
                             }
                             if(i == 2){
@@ -193,16 +200,22 @@ class GameboardFragment : Fragment() {
                                     binding.RTwoLetterOne.setTextColor(Color.parseColor("#008000"))
                                 } else if(word.contains(wordArray[0])){
                                     binding.RTwoLetterOne.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RTwoLetterOne.setTextColor(Color.parseColor("#708090"))
                                 }
                                 if(word[1] == wordArray[1]) {
                                     binding.RTwoLetterTwo.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[1])){
                                     binding.RTwoLetterTwo.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RTwoLetterTwo.setTextColor(Color.parseColor("#708090"))
                                 }
                                 if(word[2] == wordArray[2]) {
                                     binding.RTwoLetterThree.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[2])){
                                     binding.RTwoLetterThree.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RTwoLetterThree.setTextColor(Color.parseColor("#708090"))
                                 }
                             }
                             if(i == 3){
@@ -210,16 +223,22 @@ class GameboardFragment : Fragment() {
                                     binding.RThreeLetterOne.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[0])){
                                     binding.RThreeLetterOne.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RThreeLetterOne.setTextColor(Color.parseColor("#708090"))
                                 }
                                 if(word[1] == wordArray[1]) {
                                     binding.RThreeLetterTwo.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[1])){
                                     binding.RThreeLetterTwo.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RThreeLetterTwo.setTextColor(Color.parseColor("#708090"))
                                 }
                                 if(word[2] == wordArray[2]) {
                                     binding.RThreeLetterThree.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[2])){
                                     binding.RThreeLetterThree.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RThreeLetterThree.setTextColor(Color.parseColor("#708090"))
                                 }
                             }
                             if(i == 4){
@@ -227,16 +246,22 @@ class GameboardFragment : Fragment() {
                                     binding.RFourLetterOne.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[0])){
                                     binding.RFourLetterOne.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RFourLetterOne.setTextColor(Color.parseColor("#708090"))
                                 }
                                 if(word[1] == wordArray[1]) {
                                     binding.RFourLetterTwo.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[1])){
                                     binding.RFourLetterTwo.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RFourLetterTwo.setTextColor(Color.parseColor("#708090"))
                                 }
                                 if(word[2] == wordArray[2]) {
                                     binding.RFourLetterThree.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[2])){
                                     binding.RFourLetterThree.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RFourLetterThree.setTextColor(Color.parseColor("#708090"))
                                 }
                             }
                             if(i == 5){
@@ -244,16 +269,22 @@ class GameboardFragment : Fragment() {
                                     binding.RFiveLetterOne.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[0])){
                                     binding.RFiveLetterOne.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RFiveLetterOne.setTextColor(Color.parseColor("#708090"))
                                 }
                                 if(word[1] == wordArray[1]) {
                                     binding.RFiveLetterTwo.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[1])){
                                     binding.RFiveLetterTwo.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RFiveLetterTwo.setTextColor(Color.parseColor("#708090"))
                                 }
                                 if(word[2] == wordArray[2]) {
                                     binding.RFiveLetterThree.setTextColor(Color.parseColor("#008000"))
                                 }else if(word.contains(wordArray[2])){
                                     binding.RFiveLetterThree.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RFiveLetterThree.setTextColor(Color.parseColor("#708090"))
                                 }
                             }
 
