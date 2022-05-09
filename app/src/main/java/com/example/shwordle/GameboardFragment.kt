@@ -165,7 +165,7 @@ class GameboardFragment : Fragment() {
                     var wordsRight = ""
                     var p = 0
                     while(p != 3) {
-                        if(word[p] == wordArray[p]){
+                        //if(word[p] == wordArray[p]){
                             wordsRight += wordArray[p]
                             binding.devControl3.setText(wordsRight)
 
@@ -174,60 +174,90 @@ class GameboardFragment : Fragment() {
                             if(i == 1){
                                 if(word[0] == wordArray[0]) {
                                     binding.letterOne.setTextColor(Color.parseColor("#008000"))
+                                } else if(word.contains(wordArray[0])){
+                                    binding.letterOne.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                                 if(word[1] == wordArray[1]) {
                                     binding.letterTwo.setTextColor(Color.parseColor("#008000"))
+                                } else if(word.contains(wordArray[1])){
+                                    binding.letterTwo.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                                 if(word[2] == wordArray[2]) {
                                     binding.letterThree.setTextColor(Color.parseColor("#008000"))
+                                } else if(word.contains(wordArray[2])){
+                                    binding.letterThree.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                             }
                             if(i == 2){
                                 if(word[0] == wordArray[0]) {
                                     binding.RTwoLetterOne.setTextColor(Color.parseColor("#008000"))
+                                } else if(word.contains(wordArray[0])){
+                                    binding.RTwoLetterOne.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                                 if(word[1] == wordArray[1]) {
                                     binding.RTwoLetterTwo.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[1])){
+                                    binding.RTwoLetterTwo.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                                 if(word[2] == wordArray[2]) {
                                     binding.RTwoLetterThree.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[2])){
+                                    binding.RTwoLetterThree.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                             }
                             if(i == 3){
                                 if(word[0] == wordArray[0]) {
                                     binding.RThreeLetterOne.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[0])){
+                                    binding.RThreeLetterOne.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                                 if(word[1] == wordArray[1]) {
                                     binding.RThreeLetterTwo.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[1])){
+                                    binding.RThreeLetterTwo.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                                 if(word[2] == wordArray[2]) {
                                     binding.RThreeLetterThree.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[2])){
+                                    binding.RThreeLetterThree.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                             }
                             if(i == 4){
                                 if(word[0] == wordArray[0]) {
                                     binding.RFourLetterOne.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[0])){
+                                    binding.RFourLetterOne.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                                 if(word[1] == wordArray[1]) {
                                     binding.RFourLetterTwo.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[1])){
+                                    binding.RFourLetterTwo.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                                 if(word[2] == wordArray[2]) {
                                     binding.RFourLetterThree.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[2])){
+                                    binding.RFourLetterThree.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                             }
                             if(i == 5){
                                 if(word[0] == wordArray[0]) {
                                     binding.RFiveLetterOne.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[0])){
+                                    binding.RFiveLetterOne.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                                 if(word[1] == wordArray[1]) {
                                     binding.RFiveLetterTwo.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[1])){
+                                    binding.RFiveLetterTwo.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                                 if(word[2] == wordArray[2]) {
                                     binding.RFiveLetterThree.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[2])){
+                                    binding.RFiveLetterThree.setTextColor(Color.parseColor("#FFFF00"))
                                 }
                             }
 
-                        }
+                        //}
                         ++p
                     }
                     // TODO for length of array, compare arrays to check for dupes
@@ -241,62 +271,58 @@ class GameboardFragment : Fragment() {
 
         }
 
-
-        addButton.setOnClickListener {
-            GameMechanic()
-            if(i == 6){
-                binding.announcer.setText("Welcome")
-                word = wordList.random()
-                binding.gameOver.isVisible = false
-                binding.gameWon.isVisible = false
-                binding.letterOne.setText("")
-                binding.letterTwo.setText("")
-                binding.letterThree.setText("")
-
-                binding.RTwoLetterOne.setText("")
-                binding.RTwoLetterTwo.setText("")
-                binding.RTwoLetterThree.setText("")
-
-                binding.RThreeLetterOne.setText("")
-                binding.RThreeLetterTwo.setText("")
-                binding.RThreeLetterThree.setText("")
-
-                binding.RFourLetterOne.setText("")
-                binding.RFourLetterTwo.setText("")
-                binding.RFourLetterThree.setText("")
-
-                binding.RFiveLetterOne.setText("")
-                binding.RFiveLetterTwo.setText("")
-                binding.RFiveLetterThree.setText("")
-                i = 0
-            }
-        }
-
-        binding.resetButton.setOnClickListener {
+        fun reset(){
             binding.announcer.setText("Welcome")
             word = wordList.random()
             binding.gameOver.isVisible = false
             binding.gameWon.isVisible = false
             binding.letterOne.setText("")
+            binding.letterOne.setTextColor(Color.parseColor("#FFFFFF"))
             binding.letterTwo.setText("")
+            binding.letterTwo.setTextColor(Color.parseColor("#FFFFFF"))
             binding.letterThree.setText("")
+            binding.letterThree.setTextColor(Color.parseColor("#FFFFFF"))
 
             binding.RTwoLetterOne.setText("")
+            binding.RTwoLetterOne.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RTwoLetterTwo.setText("")
+            binding.RTwoLetterTwo.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RTwoLetterThree.setText("")
+            binding.RTwoLetterThree.setTextColor(Color.parseColor("#FFFFFF"))
 
             binding.RThreeLetterOne.setText("")
+            binding.RThreeLetterOne.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RThreeLetterTwo.setText("")
+            binding.RThreeLetterTwo.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RThreeLetterThree.setText("")
+            binding.RThreeLetterThree.setTextColor(Color.parseColor("#FFFFFF"))
 
             binding.RFourLetterOne.setText("")
+            binding.RFourLetterOne.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RFourLetterTwo.setText("")
+            binding.RFourLetterTwo.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RFourLetterThree.setText("")
+            binding.RFourLetterThree.setTextColor(Color.parseColor("#FFFFFF"))
 
             binding.RFiveLetterOne.setText("")
+            binding.RFiveLetterOne.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RFiveLetterTwo.setText("")
+            binding.RFiveLetterTwo.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RFiveLetterThree.setText("")
+            binding.RFiveLetterThree.setTextColor(Color.parseColor("#FFFFFF"))
             i = 0
+        }
+
+
+        addButton.setOnClickListener {
+            GameMechanic()
+            if(i == 6){
+                reset()
+            }
+        }
+
+        binding.resetButton.setOnClickListener {
+            reset()
         }
 
         return binding.root
