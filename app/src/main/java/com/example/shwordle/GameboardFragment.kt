@@ -51,7 +51,7 @@ class GameboardFragment : Fragment() {
             view.findNavController().navigate(R.id.action_gameboardFragment_to_profile_fragment)
         }
 
-        val wordList = listOf("cat","bat", "fat", "mad", "run")
+        val wordList = listOf("same", "able", "aged", "bell", "blow", "book", "card", "city", "case","dust", "draw", "door", "duke")
         var word = wordList.random()
         val addButton: Button = binding.add
         var i = 0
@@ -61,81 +61,96 @@ class GameboardFragment : Fragment() {
             var letterOne: String = binding.letterOne.text.toString().lowercase()
             var letterTwo: String = binding.letterTwo.text.toString().lowercase()
             var letterThree: String = binding.letterThree.text.toString().lowercase()
+            var letterFour: String = binding.letterFour.text.toString().lowercase()
 
             var RTwoLetterOne: String = binding.RTwoLetterOne.text.toString().lowercase()
             var RTwoLetterTwo: String = binding.RTwoLetterTwo.text.toString().lowercase()
             var RTwoLetterThree: String = binding.RTwoLetterThree.text.toString().lowercase()
+            var RTwoLetterFour: String = binding.RTwoLetterFour.text.toString().lowercase()
 
             var RThreeLetterOne: String = binding.RThreeLetterOne.text.toString().lowercase()
             var RThreeLetterTwo: String = binding.RThreeLetterTwo.text.toString().lowercase()
             var RThreeLetterThree: String = binding.RThreeLetterThree.text.toString().lowercase()
+            var RThreeLetterFour: String = binding.RThreeLetterFour.text.toString().lowercase()
 
             var RFourLetterOne: String = binding.RFourLetterOne.text.toString().lowercase()
             var RFourLetterTwo: String = binding.RFourLetterTwo.text.toString().lowercase()
             var RFourLetterThree: String = binding.RFourLetterThree.text.toString().lowercase()
+            var RFourLetterFour: String = binding.RFourLetterFour.text.toString().lowercase()
 
             var RFiveLetterOne: String = binding.RFiveLetterOne.text.toString().lowercase()
             var RFiveLetterTwo: String = binding.RFiveLetterTwo.text.toString().lowercase()
             var RFiveLetterThree: String = binding.RFiveLetterThree.text.toString().lowercase()
+            var RFiveLetterFour: String = binding.RFiveLetterFour.text.toString().lowercase()
 
 
-            var wordGuessed = letterOne + letterTwo + letterThree
-            if(wordGuessed.length != 3){
+            var wordGuessed = letterOne + letterTwo + letterThree + letterFour
+            if(wordGuessed.length != 4){
                 binding.letterOne.setText("S")
                 letterOne = "S"
                 binding.letterTwo.setText("S")
                 letterTwo = "S"
                 binding.letterThree.setText("S")
                 letterThree = "S"
-                wordGuessed = letterOne + letterTwo + letterThree
+                binding.letterFour.setText("S")
+                letterFour = "S"
+                wordGuessed = letterOne + letterTwo + letterThree + letterFour
             }
 
             if(i == 1){
-                wordGuessed = RTwoLetterOne + RTwoLetterTwo + RTwoLetterThree
-                if(wordGuessed.length != 3){
+                wordGuessed = RTwoLetterOne + RTwoLetterTwo + RTwoLetterThree + RTwoLetterFour
+                if(wordGuessed.length != 4){
                     binding.RTwoLetterOne.setText("S")
                     RTwoLetterOne = "S"
                     binding.RTwoLetterTwo.setText("S")
                     RTwoLetterTwo = "S"
                     binding.RTwoLetterThree.setText("S")
                     RTwoLetterThree = "S"
-                    wordGuessed = RTwoLetterOne + RTwoLetterTwo + RTwoLetterThree
+                    binding.RTwoLetterFour.setText("S")
+                    RTwoLetterFour = "S"
+                    wordGuessed = RTwoLetterOne + RTwoLetterTwo + RTwoLetterThree + RTwoLetterFour
                 }
             }
             if(i == 2){
-                wordGuessed = RThreeLetterOne + RThreeLetterTwo + RThreeLetterThree
-                if(wordGuessed.length != 3){
+                wordGuessed = RThreeLetterOne + RThreeLetterTwo + RThreeLetterThree + RThreeLetterFour
+                if(wordGuessed.length != 4){
                     binding.RThreeLetterOne.setText("S")
                     RThreeLetterOne = "S"
                     binding.RThreeLetterTwo.setText("S")
                     RThreeLetterTwo = "S"
                     binding.RThreeLetterThree.setText("S")
                     RThreeLetterThree = "S"
-                    wordGuessed = RThreeLetterOne + RThreeLetterTwo + RThreeLetterThree
+                    binding.RThreeLetterFour.setText("S")
+                    RThreeLetterFour = "S"
+                    wordGuessed = RThreeLetterOne + RThreeLetterTwo + RThreeLetterThree + RThreeLetterFour
                 }
             }
             if(i == 3){
-                wordGuessed = RFourLetterOne + RFourLetterTwo + RFourLetterThree
-                if(wordGuessed.length != 3){
+                wordGuessed = RFourLetterOne + RFourLetterTwo + RFourLetterThree + RFourLetterFour
+                if(wordGuessed.length != 4){
                     binding.RFourLetterOne.setText("S")
                     RFourLetterOne = "S"
                     binding.RFourLetterTwo.setText("S")
                     RFourLetterTwo = "S"
                     binding.RFourLetterThree.setText("S")
                     RFourLetterThree = "S"
-                    wordGuessed = RFourLetterOne + RFourLetterTwo + RFourLetterThree
+                    binding.RFourLetterFour.setText("S")
+                    RFourLetterFour = "S"
+                    wordGuessed = RFourLetterOne + RFourLetterTwo + RFourLetterThree + RFourLetterFour
                 }
             }
             if(i == 4){
-                wordGuessed = RFiveLetterOne + RFiveLetterTwo + RFiveLetterThree
-                if(wordGuessed.length != 3){
+                wordGuessed = RFiveLetterOne + RFiveLetterTwo + RFiveLetterThree + RFiveLetterFour
+                if(wordGuessed.length != 4){
                     binding.RFiveLetterOne.setText("S")
                     RFiveLetterOne = "S"
                     binding.RFiveLetterTwo.setText("S")
                     RFiveLetterTwo = "S"
                     binding.RFiveLetterThree.setText("S")
                     RFiveLetterThree = "S"
-                    wordGuessed = RFiveLetterOne + RFiveLetterTwo + RFiveLetterThree
+                    binding.RFiveLetterFour.setText("S")
+                    RFiveLetterFour = "S"
+                    wordGuessed = RFiveLetterOne + RFiveLetterTwo + RFiveLetterThree + RFiveLetterFour
                 }
             }
             // TODO make above initialization its own func ^^^
@@ -165,7 +180,7 @@ class GameboardFragment : Fragment() {
                     var t = word.size
                     var wordsRight = ""
                     var p = 0
-                    while(p != 3) {
+                    while(p != 4) {
                         //if(word[p] == wordArray[p]){
                             wordsRight += wordArray[p]
                             binding.devControl3.setText(wordsRight)
@@ -194,6 +209,13 @@ class GameboardFragment : Fragment() {
                                 } else{
                                     binding.letterThree.setTextColor(Color.parseColor("#708090"))
                                 }
+                                if(word[3] == wordArray[3]) {
+                                    binding.letterFour.setTextColor(Color.parseColor("#008000"))
+                                } else if(word.contains(wordArray[3])){
+                                    binding.letterFour.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.letterFour.setTextColor(Color.parseColor("#708090"))
+                                }
                             }
                             if(i == 2){
                                 if(word[0] == wordArray[0]) {
@@ -216,6 +238,13 @@ class GameboardFragment : Fragment() {
                                     binding.RTwoLetterThree.setTextColor(Color.parseColor("#FFFF00"))
                                 } else{
                                     binding.RTwoLetterThree.setTextColor(Color.parseColor("#708090"))
+                                }
+                                if(word[3] == wordArray[3]) {
+                                    binding.RTwoLetterFour.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[3])){
+                                    binding.RTwoLetterFour.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RTwoLetterFour.setTextColor(Color.parseColor("#708090"))
                                 }
                             }
                             if(i == 3){
@@ -240,6 +269,13 @@ class GameboardFragment : Fragment() {
                                 } else{
                                     binding.RThreeLetterThree.setTextColor(Color.parseColor("#708090"))
                                 }
+                                if(word[3] == wordArray[3]) {
+                                    binding.RThreeLetterFour.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[3])){
+                                    binding.RThreeLetterFour.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RThreeLetterFour.setTextColor(Color.parseColor("#708090"))
+                                }
                             }
                             if(i == 4){
                                 if(word[0] == wordArray[0]) {
@@ -263,6 +299,13 @@ class GameboardFragment : Fragment() {
                                 } else{
                                     binding.RFourLetterThree.setTextColor(Color.parseColor("#708090"))
                                 }
+                                if(word[3] == wordArray[3]) {
+                                    binding.RFourLetterFour.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[3])){
+                                    binding.RFourLetterFour.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RFourLetterFour.setTextColor(Color.parseColor("#708090"))
+                                }
                             }
                             if(i == 5){
                                 if(word[0] == wordArray[0]) {
@@ -285,6 +328,13 @@ class GameboardFragment : Fragment() {
                                     binding.RFiveLetterThree.setTextColor(Color.parseColor("#FFFF00"))
                                 } else{
                                     binding.RFiveLetterThree.setTextColor(Color.parseColor("#708090"))
+                                }
+                                if(word[3] == wordArray[3]) {
+                                    binding.RFiveLetterFour.setTextColor(Color.parseColor("#008000"))
+                                }else if(word.contains(wordArray[3])){
+                                    binding.RFiveLetterFour.setTextColor(Color.parseColor("#FFFF00"))
+                                } else{
+                                    binding.RFiveLetterFour.setTextColor(Color.parseColor("#708090"))
                                 }
                             }
 
@@ -313,6 +363,8 @@ class GameboardFragment : Fragment() {
             binding.letterTwo.setTextColor(Color.parseColor("#FFFFFF"))
             binding.letterThree.setText("")
             binding.letterThree.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.letterFour.setText("")
+            binding.letterFour.setTextColor(Color.parseColor("#FFFFFF"))
 
             binding.RTwoLetterOne.setText("")
             binding.RTwoLetterOne.setTextColor(Color.parseColor("#FFFFFF"))
@@ -320,6 +372,8 @@ class GameboardFragment : Fragment() {
             binding.RTwoLetterTwo.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RTwoLetterThree.setText("")
             binding.RTwoLetterThree.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.RTwoLetterFour.setText("")
+            binding.RTwoLetterFour.setTextColor(Color.parseColor("#FFFFFF"))
 
             binding.RThreeLetterOne.setText("")
             binding.RThreeLetterOne.setTextColor(Color.parseColor("#FFFFFF"))
@@ -327,6 +381,8 @@ class GameboardFragment : Fragment() {
             binding.RThreeLetterTwo.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RThreeLetterThree.setText("")
             binding.RThreeLetterThree.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.RThreeLetterFour.setText("")
+            binding.RThreeLetterFour.setTextColor(Color.parseColor("#FFFFFF"))
 
             binding.RFourLetterOne.setText("")
             binding.RFourLetterOne.setTextColor(Color.parseColor("#FFFFFF"))
@@ -334,6 +390,8 @@ class GameboardFragment : Fragment() {
             binding.RFourLetterTwo.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RFourLetterThree.setText("")
             binding.RFourLetterThree.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.RFourLetterFour.setText("")
+            binding.RFourLetterFour.setTextColor(Color.parseColor("#FFFFFF"))
 
             binding.RFiveLetterOne.setText("")
             binding.RFiveLetterOne.setTextColor(Color.parseColor("#FFFFFF"))
@@ -341,6 +399,8 @@ class GameboardFragment : Fragment() {
             binding.RFiveLetterTwo.setTextColor(Color.parseColor("#FFFFFF"))
             binding.RFiveLetterThree.setText("")
             binding.RFiveLetterThree.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.RFiveLetterFour.setText("")
+            binding.RFiveLetterFour.setTextColor(Color.parseColor("#FFFFFF"))
             i = 0
         }
 
