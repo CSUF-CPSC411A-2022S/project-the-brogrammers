@@ -12,12 +12,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.example.shwordle.database.Profile2
 
 import com.example.shwordle.database.ProfileDatabase
 import com.example.shwordle.databinding.GameboardBinding
 
 
 class GameboardFragment : Fragment() {
+    private lateinit var mUserViewModel: Profile2ViewModel
     lateinit var clearButton: Button
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +27,34 @@ class GameboardFragment : Fragment() {
     ): View? {
         val binding: GameboardBinding =
             DataBindingUtil.inflate(inflater, R.layout.gameboard, container, false)
+        /*
+        val id = 0
+        val check = 0
+        if (check == 0) {
+            mUserViewModel = ViewModelProvider(this).get(Profile2ViewModel::class.java)
+            val wordList = listOf(
+                "same",
+                "able",
+                "aged",
+                "bell",
+                "blow",
+                "book",
+                "card",
+                "city",
+                "case",
+                "dust",
+                "draw",
+                "door",
+                "duke"
+            )
+            val itr = wordList.listIterator()
+            while(itr.hasNext()){
+                val profile2 = Profile2(id, itr.next())
+                mUserViewModel.insert(profile2)
+            }
+        }
+
+         */
 
         val application = requireNotNull(this.activity).application
 
@@ -38,6 +68,8 @@ class GameboardFragment : Fragment() {
 
         profileViewModel.insert()
 
+
+
         binding.profileViewModel = profileViewModel
         binding.lifecycleOwner = this
         binding.gameOver.isVisible = false
@@ -45,6 +77,10 @@ class GameboardFragment : Fragment() {
         binding.devControl1.isVisible = false
         binding.devControl2.isVisible = false
         binding.devControl3.isVisible = false
+        binding.instructions.isVisible = true
+        binding.instructions.setOnClickListener{view: View ->
+            binding.instructions.isVisible = false
+        }
 
         binding.profileButton.setOnClickListener { view: View ->
             profileViewModel.updateGamesPlayed()
@@ -161,7 +197,7 @@ class GameboardFragment : Fragment() {
             CheckifCorrect(result)
             if(i != 6) {
                 if (result == 0) {
-                    binding.announcer.setText("Game Won")
+                    binding.announcer.setText("")
                     profileViewModel.updateGamesWon()
                     binding.gameWon.isVisible = true
                     // TODO letterOne.filters = arrayOf(InputFilter.LengthFilter(10)) setting all previous grid to unmutable
@@ -171,7 +207,7 @@ class GameboardFragment : Fragment() {
                     binding.announcer.setText("not quite ")
                     if(i == 5){
                         profileViewModel.updateGamesLost()
-                        binding.announcer.setText("Game Over")
+                        binding.announcer.setText("b")
                         binding.gameOver.isVisible = true
                         binding.devControl2.isVisible = true
                     }
@@ -354,6 +390,7 @@ class GameboardFragment : Fragment() {
 
         fun reset(){
             binding.announcer.setText("Welcome")
+            binding.instructions.isVisible = true
             word = wordList.random()
             binding.gameOver.isVisible = false
             binding.gameWon.isVisible = false
